@@ -1,0 +1,70 @@
+
+image: gitpod/workspace-full:2023-01-16-03-31-28
+tasks:
+  - name: Temporal Local Development Server
+    init: |
+      # install temporal CLI
+      curl -sSf https://temporal.download/cli.sh | sh -s - --dir /workspace
+      # install tctl for backwards compat
+      mkdir -p tctl_temp
+      pushd tctl_temp
+      curl -sL -O https://github.com/temporalio/tctl/releases/download/v1.18.0/tctl_1.18.0_linux_amd64.tar.gz
+      tar zxvf tctl_1.18*
+      mv tctl /workspace/bin/tctl
+      chmod +x /workspace/bin/tctl
+      popd
+      rm -rf tctl_temp
+    command: |
+      # ensure new terminals also have access to tctl
+      cp .bash_aliases ~/.bash_aliases
+      export TEMPORAL_CORS_ORIGINS=http://localhost:3000
+      export TEMPORAL_NOTIFY_ON_NEW_VERSION=false
+      echo "waiting for server...."
+      clear
+      source .bash_aliases
+      /workspace/bin/temporal server start-dev --dynamic-config-value frontend.workerVersioningDataAPIs=true --dynamic-config-value frontend.workerVersioningWorkflowAPIs=true --dynamic-config-value worker.buildIdScavengerEnabled=true --ui-port 8080 --db-filename $HOME/.cluster-persistence.db
+  - name: Worker
+    command: |
+      gp ports await 7233 && gp ports await 8080 && sleep 25 && gp preview $(gp url 8080)
+      clear
+      source .bash_aliases
+      echo "Use this terminal to run your Worker"
+    openMode: tab-after
+  - name: Workflows
+    command: |
+      gp open README.md
+      source .bash_aliases
+      clear
+      echo "Use this terminal to run workflows..."
+    openMode: split-right
+  - name: Microservice
+    command: |
+      source .bash_aliases
+      clear
+      echo "Use this terminal to start the microservice used in various activities."
+    openMode: split-right
+
+
+ports:
+  - name: Temporal server
+    port: 7233
+    onOpen: ignore
+  - name: Temporal Web UI v2
+    port: 8080 # temporal UI
+    description: New (v2) Temporal Web UI
+    onOpen: ignore
+    visibility: private
+  - name: Greeting Service
+    description: Local microservice used in exercises
+    port: 9999
+    onOpen: ignore
+    visibility: private
+
+vscode:
+  extensions:
+    - golang.Go
+    - ms-python.python
+    - redhat.java
+    - vscjava.vscode-java-test
+    - vscjava.vscode-java-debug
+    - wingrunr21.vscode-ruby
