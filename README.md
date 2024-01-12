@@ -9,7 +9,7 @@ training course.
 Directory Name                        | Exercise
 :------------------------------------ | :----------------------------------------------------------------
 `exercises/sending-signals`           | [Exercise 1](exercises/sending-signals/README.md)
-`exercises/worker-versioning`         | [Exercise 2](exercises/worker-versioning/README.md)
+`exercises/querying-workflows`         | [Exercise 2](exercises/querying-workflows/README.md)
 `exercises/async-activity-completion` | [Exercise 3](exercises/async-activity-completion/README.md)
 `exercises/sending-signals/optional`  | [Optional Exercise](exercises/sending-signals/optional/README.md)
 
