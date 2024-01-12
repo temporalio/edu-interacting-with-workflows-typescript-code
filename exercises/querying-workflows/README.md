@@ -14,7 +14,7 @@ the complete version in the `solution` subdirectory.
 
 ## Setup
 
-You'll need three terminal windows for this exercise.
+You'll need two terminal windows for this exercise.
 
 1. In all terminals, change to the `exercises/querying-workflows/practice` directory.
 2. In one terminal, run `npm install` to install dependencies.

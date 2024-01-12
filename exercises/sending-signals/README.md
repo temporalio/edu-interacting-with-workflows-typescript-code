@@ -3,7 +3,7 @@
 During this exercise, you will:
 
 - Define and handle a Signal
-- Create another Signaling Workflow which will Signal another Workflow what execution path to take
+- Create another Signaling Workflow which will Signal another Workflow which execution path to take
 - Call both Workflows from the Client file
 
 Make your changes to the code in the `practice` subdirectory (look for
@@ -13,7 +13,7 @@ the complete version in the `solution` subdirectory.
 
 ## Setup
 
-You'll need three terminal windows for this exercise.
+You'll need two terminal windows for this exercise.
 
 1. In all terminals, change to the `exercises/sending-signals/practice` directory
 2. In one terminal, run `npm install` to install dependencies.
@@ -56,7 +56,7 @@ After you have created a handle, you can see there is some logic to make and del
 
 We want to start both Workflows - `pizzaWorkflow` and `fulfillOrderSignal`.
 
-1. Edit the `client.ts` file to start the `fulfillOrderSignal` Workflow using `client.workflow.start`. Use the same argument and task queue as `pizzaWorkflowHandle`. Set the Workflow ID to be `signal-fulfilled-order-${order.orderNumber}` or any other meaningful string.
+1. Edit the `client.ts` file to start the `fulfillOrderSignal` Workflow using `client.workflow.start`. Use the same argument and task queue as `pizzaWorkflowHandle`. Set the Workflow ID to be `signal-fulfilled-order-${order.orderNumber}` or any other meaningful ID.
 
 ## Part F: Run Both Workflows
 

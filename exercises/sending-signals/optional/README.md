@@ -4,24 +4,25 @@ This is an optional exercise to show how to send a Signal from just the Client a
 
 In this part of the exercise, we have removed the `fulfillOrderWorkflow` Workflow, since this exercise is just for sending a Signal from a Client, and not from another Workflow.
 
-We will skip the defining and handling of `fulfillOrderSignal` that were handled. This exercise will solely focus on the Client.
+We will skip the defining and handling of `fulfillOrderSignal` that were handled in `exercises/sending-signals/`. This exercise will solely focus on the Client file.
 
 ## Setup
 
-You'll need three terminal windows for this exercise.
+You'll need two terminal windows for this exercise.
 
 1. In all terminals, change to the `exercises/sending-signals/optional/practice` directory
 2. In one terminal, run `npm install` to install dependencies.
 
 ## Part A: Importing Your Signal
 
-1. Edit the `client.ts` file to imort `fulfillOrderSignal` from the `pizzaWorkflow`.
+1. Edit the `client.ts` file to import `fulfillOrderSignal` from the `pizzaWorkflow`.
 
 ## Part B: Get a Handle on the Pizza Workflow
 
 In this part of the exercise, you will create a handle on the Workflow that you wish to Signal, which is `pizzaWorkflow`.
 
 1. Edit the `client.ts` file and use the `await client.workflow.getHandle` method to retrieve a handle of `pizzaWorkflow` using its Workflow ID. 
+2. Set the handle to a variable called `signalHandler`.
 
 ## Part C: Sending a Signal to the Pizza Workflow
 
