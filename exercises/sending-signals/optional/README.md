@@ -21,7 +21,7 @@ You'll need two terminal windows for this exercise.
 
 In this part of the exercise, you will create a handle on the Workflow that you wish to Signal, which is `pizzaWorkflow`.
 
-1. Edit the `client.ts` file and use the `await client.workflow.getHandle` method to retrieve a handle of `pizzaWorkflow` using its Workflow ID. 
+1. Edit the `client.ts` file and use the `await client.workflow.getHandle` method to retrieve a handle of `pizzaWorkflow` using its Workflow ID.
 2. Set the handle to a variable called `signalHandler`.
 
 ## Part C: Sending a Signal to the Pizza Workflow

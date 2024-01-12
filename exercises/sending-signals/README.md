@@ -65,6 +65,6 @@ To run the Workflow:
 1. In one terminal, start the Worker by running `npm start`.
 2. In another terminal, start the Workflow by running `npm run workflow` which will run both `fulfillOrderSignal` and `pizzaWorkflow`.
 
-### This is the end of the exercise. 
+### This is the end of the exercise.
 
 If you'd like to see an optional exercise of sending a Signal from just the Client - not a Workflow - navigate to `exercises/sending-signals/optional/practice`.

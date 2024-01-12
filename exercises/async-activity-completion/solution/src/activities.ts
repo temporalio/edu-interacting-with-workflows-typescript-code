@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as activity from '@temporalio/activity';
-import { CompleteAsyncError } from "@temporalio/activity";
-import { AsyncCompletionClient } from "@temporalio/client";
+import { CompleteAsyncError } from '@temporalio/activity';
+import { AsyncCompletionClient } from '@temporalio/client';
 
 import { TranslationActivityInput, TranslationActivityOutput } from './shared';
 

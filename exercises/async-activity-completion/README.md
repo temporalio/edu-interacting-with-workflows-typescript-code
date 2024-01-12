@@ -3,8 +3,8 @@
 During this exercise, you will:
 
 - Retrieve a task token from your Activity execution
-- Learn to structure asynchronous Activities 
-- Throw a `CompleteAsyncError` to indicate that the Activity is waiting for an external completion.using 
+- Learn to structure asynchronous Activities
+- Throw a `CompleteAsyncError` to indicate that the Activity is waiting for an external completion.using
 - Use `AsyncCompletionClient` to communicate the result of the asynchronous Activity back to the Workflow
 
 Make your changes to the code in the `practice` subdirectory (look for `TODO` comments that will guide you to where you should make changes to the code). If you need a hint or want to verify your changes, look at the complete version in the `solution` subdirectory.
@@ -30,13 +30,13 @@ You have three functions in the Activities file: `translateTerm`, `startTranslat
 
 1. In the `activities.ts` file, extract the task token, which is unique identifier for the Activity Task Execution.
 
-## Part B: Schedule your Activity to Run Asynchronously 
+## Part B: Schedule your Activity to Run Asynchronously
 
 1. Using `setTimeout`, schedule your function `startTranslation` to run asynchronously after a one second delay. Your `startTranslation` function should take in the task token you defined in part A, as well as the input that is passed into the `translateTerm` function.
 
 ## Part C: Throw `CompleteAsyncError`
 
-1. Throw `CompleteAsyncError` to make the Worker forget about `startTranslation` Activity and to signify that `startTranslation` is waiting for an external completion.
+1. Throw a new `CompleteAsyncError` to make the Worker forget about `startTranslation` Activity and to signify that `startTranslation` is waiting for an external completion.
 
 ## Part D: Call `completeTranslation` function
 
@@ -53,7 +53,7 @@ We will now move to the final function: `completeTranslation`. This is the funct
 
 ## Part F: Running the Workflow
 
-To run the `sayHelloGoodbyeWorkflow` Workflow: 
+To run the `sayHelloGoodbyeWorkflow` Workflow:
 
 In each terminal, ensure you are in the `exercises/async-activity-completion/practice` directory.
 
