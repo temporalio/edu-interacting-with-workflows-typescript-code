@@ -1,4 +1,4 @@
-import { proxyActivities, log, defineSignal, setHandler, sleep } from '@temporalio/workflow';
+import { proxyActivities, log, defineSignal, setHandler, condition } from '@temporalio/workflow';
 import { ApplicationFailure } from '@temporalio/common';
 import type * as activities from './activities';
 import { Distance, OrderConfirmation, PizzaOrder } from './shared';
@@ -39,9 +39,7 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
     signalProcessed = true;
   });
 
-  while (!signalProcessed) {
-    await sleep(100);
-  }
+  await condition(() => signalProcessed);
 
   if (order.isFulfilled) {
     const bill = {

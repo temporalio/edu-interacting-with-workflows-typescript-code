@@ -38,7 +38,7 @@ You have three functions in the Activities file: `translateTerm`, `startTranslat
 
 1. Throw a new `CompleteAsyncError` to make the Worker forget about `startTranslation` Activity and to signify that `startTranslation` is waiting for an external completion.
 
-## Part D: Call `completeTranslation` function
+## Part D: Call `completeTranslation` Function
 
 We will now move to the next function in the `activities.ts` file: `startTranslation`. This is the function that is running asynchronously since it needs to take some time to call the translation service. This is a stand-in for a more complex scenario where the actual work might happen outside of the Temporal service. After it receives the data from the translation service, we want to call `completeTranslation`.
 

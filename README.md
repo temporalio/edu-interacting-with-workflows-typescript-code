@@ -5,6 +5,8 @@ included in the TypeScript version of the
 [Interacting with Workflows](https://learn.temporal.io/courses/interacting-with-workflows)
 training course.
 
+It's important to remember that the example code used in this course was designed to support learning a specific aspect of Temporal, not to serve as a ready-to-use template for implementing a production system.
+
 ## Hands-On Exercises
 
 | Directory Name                        | Exercise                                                          |

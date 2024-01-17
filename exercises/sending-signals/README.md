@@ -32,7 +32,7 @@ You will now handle the Signal you defined in part A, and let the Workflow know 
 
 2. Now, edit the `pizzaWorkflow.ts` file to handle your Signal. We can see in the `setHandler` method that the `fulfillOrderSignal` is already partially handled. When a Workflow receives the `fulfillOrderSignal`, it will change the `isFulfilled` key in the `order` object to the boolean that it receives, indicating if the order was fulfilled or not. Fill in the second part of this handler function by flipping the `signalProcessed` flag to indicate that the Signal has now been processed.
 
-3. Note that after this `setHandler` method, there is a while loop that waits for the `signal` to be received before continuing to the next step - billing the customer or returning an error.
+3. Note that after this `setHandler` method, the code waits for the `signal` to be received before continuing to the next step - billing the customer or returning an error.
 
 ## Part C: Getting a Handle on the Workflow to Signal
 
