@@ -53,6 +53,4 @@ To run the Workflows:
 
 In your console, should see see the Workflows that succeeded.
 
-### This is the end of the exercise.
-
-If you'd like to see an optional exercise of sending a Signal from just the Client - not a Workflow - navigate to `exercises/sending-signals/optional/practice`.
+### This is the end of the sample.
