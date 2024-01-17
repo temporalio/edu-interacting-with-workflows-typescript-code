@@ -16,6 +16,11 @@ It's important to remember that the example code used in this course was designe
 | `exercises/async-activity-completion` | [Exercise 3](exercises/async-activity-completion/README.md)       |
 | `exercises/sending-signals/optional`  | [Optional Exercise](exercises/sending-signals/optional/README.md) |
 
+Samples
+Directory Name | Description
+:----------------------------------| :---------------------------------------------------------------------------------------------------------------------
+`samples/custom-search-attributes` | [Shows a sample of how to use custom search attributes to find queries where the order for pizzas has failed](samples/custom-search-attributes)
+
 ## Reference
 
 The following links provide additional information that you may find helpful as you work through this course.
