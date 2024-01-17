@@ -42,6 +42,8 @@ for await (const workflow of iterator) {
 }
 ```
 
+This lists all the WOrkflows that fulfill this query.
+
 ## Part D: Running Your Workflows
 
 To run the Workflows:
