@@ -53,4 +53,6 @@ To run the Workflows:
 
 In your console, should see see the Workflows that succeeded.
 
+You can also send a query with your CLI: `temporal workflow list -q 'isOrderFailed=false'`
+
 ### This is the end of the sample.

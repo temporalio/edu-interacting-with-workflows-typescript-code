@@ -35,7 +35,7 @@ async function run() {
   });
 
   for await (const workflow of iterator) {
-    console.log('RESPONSE', workflow.workflowId);
+    console.log('Successful order:', workflow.workflowId);
   }
 }
 
