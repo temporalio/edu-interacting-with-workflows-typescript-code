@@ -6,7 +6,7 @@ This example provides an example of how custom search attributes can be used in 
 
 You'll need two terminal windows for this exercise.
 
-1. In all terminals, change to the `exercises/samples/custom-search-attributes` directory
+1. In all terminals, change to the `exercises/samples/custom-search-attributes` directory.
 2. In one terminal, run `npm install` to install dependencies.
 
 ## Part A: Setting Your Custom Search Attribute
@@ -51,7 +51,7 @@ To run the Workflows:
 1. In one terminal, start the Worker by running `npm start`.
 2. In another terminal, start the Workflow by running `npm run workflow`.
 
-In your console, should see see the Workflows that succeeded.
+In your console,you should see the Workflows that succeeded.
 
 You can also send a query with your CLI: `temporal workflow list -q 'isOrderFailed=false'`
 

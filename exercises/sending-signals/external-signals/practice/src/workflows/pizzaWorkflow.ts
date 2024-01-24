@@ -1,4 +1,4 @@
-import { condition, proxyActivities, log, defineSignal, setHandler, sleep } from '@temporalio/workflow';
+import { condition, proxyActivities, log, defineSignal, setHandler } from '@temporalio/workflow';
 import { ApplicationFailure } from '@temporalio/common';
 import type * as activities from '../activities';
 import { Distance, OrderConfirmation, PizzaOrder } from '../shared';

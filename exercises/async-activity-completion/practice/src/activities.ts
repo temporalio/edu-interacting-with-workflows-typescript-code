@@ -9,7 +9,7 @@ export async function translateTerm(input: TranslationActivityInput): Promise<Tr
   const context = activity.Context.current();
   //TODO Part A: Extract the task token and replace line 13 with it.
   //This can be done using the context variable above, which is defined as:
-  // const context = {info: {taskToken: 'abc'}}
+  //const context = {info: {taskToken: 'abc'}}
   const taskToken = new Uint8Array(2);
 
   context.log.info('Translating term:', { LanguageCode: input.languageCode, Term: input.term });

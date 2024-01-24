@@ -1,4 +1,4 @@
-# Exercise 3: Asynchronous Activity Completion
+# Exercise 4: Asynchronous Activity Completion
 
 During this exercise, you will:
 
@@ -29,27 +29,33 @@ You have three functions in the Activities file: `translateTerm`, `startTranslat
 ## Part A: Retrieve the task token
 
 1. In the `activities.ts` file, extract the task token, which is unique identifier for the Activity Task Execution.
+2. Replace line 13 with your `taskToken` variable.
 
 ## Part B: Schedule your Activity to Run Asynchronously
 
-1. Using `setTimeout`, schedule your function `startTranslation` to run asynchronously after a one second delay. Your `startTranslation` function should take in the task token you defined in part A, as well as the input that is passed into the `translateTerm` function.
+1. Using `setTimeout`, schedule your function `startTranslation` to run asynchronously after a one second delay. 
+2. Your `startTranslation` function should take in the task token you defined in part A, as well as the input that is passed into the `translateTerm` function.
 
 ## Part C: Throw `CompleteAsyncError`
 
-1. Throw a new `CompleteAsyncError` to make the Worker forget about `startTranslation` Activity and to signify that `startTranslation` is waiting for an external completion.
+Throw a new `CompleteAsyncError` to make the Worker forget about `startTranslation` Activity and to signify that `startTranslation` is waiting for an external completion.
 
 ## Part D: Call `completeTranslation` Function
 
 We will now move to the next function in the `activities.ts` file: `startTranslation`. This is the function that is running asynchronously since it needs to take some time to call the translation service. This is a stand-in for a more complex scenario where the actual work might happen outside of the Temporal service. After it receives the data from the translation service, we want to call `completeTranslation`.
 
-1. In the `startTranslation` function, call the `completeTranslation` function, passing in the task token and the data that we received from the translation service.
+1. In the `startTranslation` function, call the `completeTranslation` function.
+2. Pass in the task token and the data that we received from the translation service.
 
 ## Part E: Use `AsyncCompletionClient` to Communicate Result Back to Temporal
 
 We will now move to the final function: `completeTranslation`. This is the function that will communicate the result of the asynchronous Activity - `startTranslation` - back to Temporal.
 
 1. In the `completeTranslation` function, instantiate a new instance of `AsyncCompletionClient` and set it to the `client` variable.
-2. Using `AsyncCompletionClient`, call its `complete` method in order to asynchronously communicate the result of `startTranslation` back to Temporal. The complete method should take in the task token along with the results from `startTranslation`. The results should be in an object with the string 'translation' as the key and the results of the translation as the value.
+2. Using `AsyncCompletionClient`, call its `complete` method in order to asynchronously communicate the result of `startTranslation` back to Temporal. 
+3. The complete method should take in the task token along with the results from `startTranslation`. 
+4. The results should be in an object with the string 'translation' as the key and the results of the translation as the value.
+5. Save the `activities.ts` file.
 
 ## Part F: Running the Workflow
 
