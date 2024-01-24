@@ -1,6 +1,6 @@
 # Custom Search Attributes
 
-This example provides an example of how custom search attributes can be used in your Workflow. This sample uses the `pizzaWorkflow`, creates a custom search attribute called `isOrderFailed` which is set to a boolean. The user can then use this search attribute to query for Workflows where the pizza order has failed.
+This example provides an example of how custom Search Attributes can be used in your Workflow. This sample uses the `pizzaWorkflow`, creates a custom Search Attribute called `isOrderFailed` which is set to a boolean. The user can then use this Search Attribute to query for Workflows where the pizza order has failed.
 
 ## Setup
 
@@ -11,15 +11,14 @@ You'll need two terminal windows for this exercise.
 
 ## Part A: Setting Your Custom Search Attribute
 
-1. First, you will set your custom search attribute, `isOrderFailed`, which is set to a boolean. You can do this in one of your terminals with the following command: `temporal operator search-attribute create --namespace default --name isOrderFailed --type bool`.
-
-2. You can also see all the search attributes you have with the command: `temporal operator search-attribute list`. You will now see `isOrderFailed` in this list.
-
-3. In the `client.ts` file, we then set our custom search attribute by adding it to the options when starting a Workflow execution using (`WorkflowOptions.searchAttributes`)[https://typescript.temporal.io/api/interfaces/client.WorkflowOptions#searchattributes].
+1. First, you will set your custom Search Attribute, `isOrderFailed`, to a boolean. 
+2. You can do this in one of your terminals with the following command: `temporal operator search-attribute create --namespace default --name isOrderFailed --type bool`.
+3. You can also see all the Search Attributes you have with the command: `temporal operator search-attribute list`. You will now see `isOrderFailed` in this list.
+4. In the `client.ts` file, we then set our custom Search Attribute by adding it to the options when starting a Workflow execution using (`WorkflowOptions.searchAttributes`)[https://typescript.temporal.io/api/interfaces/client.WorkflowOptions#searchattributes]. This is optional in this case, and this is more for setting Static Attributes that are known at the start of the Workflow. However, we have done so in this file for demonstration purposes.
 
 ## Part B: Upserting Attributes
 
-Within the `pizzaWorkflow` code, we will now dynamically update search attributes using [`upsertSearchAttributes`](https://typescript.temporal.io/api/namespaces/workflow#upsertsearchattributes).
+Within the `pizzaWorkflow` code, we will now dynamically update Search Attributes using [`upsertSearchAttributes`](https://typescript.temporal.io/api/namespaces/workflow#upsertsearchattributes).
 
 1. In `pizzaWorkflow.ts`, we use `upsertSearchAttributes({ isOrderFailed: [false] })` to indicate that the order has not failed in the part of the logic when the Workflow has received the Signal that the order has been fulfilled.
 
@@ -27,9 +26,9 @@ Within the `pizzaWorkflow` code, we will now dynamically update search attribute
 
 ## Part C: Querying Workflows by Search Attributes
 
-Once you have Workflows tagged with custom search attributes, you can query them based on these attributes.
+Once you have Workflows tagged with custom Search Attributes, you can query them based on these attributes.
 
-1. In `client.ts`, we have:
+In `client.ts`, we have:
 
 ```typescript
 const failedOrdersQuery = `isOrderFailed = true`;
@@ -42,7 +41,7 @@ for await (const workflow of iterator) {
 }
 ```
 
-This lists all the WOrkflows that fulfill this query.
+This lists all the Workflows that fulfill this query.
 
 ## Part D: Running Your Workflows
 
