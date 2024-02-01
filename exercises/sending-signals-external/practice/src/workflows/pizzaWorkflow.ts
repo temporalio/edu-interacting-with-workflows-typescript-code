@@ -10,7 +10,8 @@ const { sendBill, getDistance } = proxyActivities<typeof activities>({
   },
 });
 
-// TODO Part A: Use defineSignal to define a Signal which we will call fulfillOrderSignal.
+// TODO Part A: Use defineSignal to define a Signal 
+// which we will call fulfillOrderSignal.
 // Fill in the Signal type, which should be 'pizzaOrderFulfilled'.
 export const fulfillOrderSignal = defineSignal<[boolean]>('');
 
@@ -38,8 +39,10 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
 
   setHandler(fulfillOrderSignal, (isOrderFulfilled) => {
     order.isFulfilled = isOrderFulfilled;
-    // TODO Part B: Use setHandler to let the Workflow know what happens if it receives a fulfillOrderSignal.
-    // Flip the signalProcessed flag in this handler to let the Workflow know that the signal has been processed
+    // TODO Part B: Use setHandler to let the Workflow know what happens 
+    // if it receives fulfillOrderSignal.
+    // Flip the signalProcessed flag in this handler 
+    // to let the Workflow know that the Signal has been processed
   });
 
   await condition(() => signalProcessed);

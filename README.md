@@ -9,12 +9,12 @@ It's important to remember that the example code used in this course was designe
 
 ## Hands-On Exercises
 
-| Directory Name                               | Exercise                                                           |
-| :------------------------------------------- | :----------------------------------------------------------------- |
-| `exercises/sending-signals/client`           | [Exercise 1](exercises/sending-signals/client/README.md)           |
-| `exercises/sending-signals/external-signals` | [Exercise 2](exercises/sending-signals/external-signals/README.md) |
-| `exercises/querying-workflows`               | [Exercise 3](exercises/querying-workflows/README.md)               |
-| `exercises/async-activity-completion`        | [Exercise 4](exercises/async-activity-completion/README.md)        |
+| Directory Name                        | Exercise                                                    |
+| :------------------------------------ | :---------------------------------------------------------- |
+| `exercises/sending-signals-external`  | [Exercise 1](exercises/sending-signals-external/README.md)  |
+| `exercises/sending-signals-client`    | [Exercise 2](exercises/sending-signals-client/README.md)    |
+| `exercises/querying-workflows`        | [Exercise 3](exercises/querying-workflows/README.md)        |
+| `exercises/async-activity-completion` | [Exercise 4](exercises/async-activity-completion/README.md) |
 
 Samples
 Directory Name | Description

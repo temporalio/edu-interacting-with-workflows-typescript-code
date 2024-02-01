@@ -24,7 +24,7 @@ You'll need two terminal windows for this exercise.
 In this part of the exercise, you will define your Query.
 
 1. Edit the `workflow.ts` file to define your Query. 
-2. Fill in line 15 by setting the `orderDetailsQuery` variable to the Query type provided: `orderDetailsQuery`. This Query will provide information on the order details supplied into the Pizza Workflow.
+2. Fill in line 16 by setting the `orderDetailsQuery` variable to the Query type provided: `orderDetailsQuery`. This Query will provide information on the order details supplied into the Pizza Workflow.
 3. Save the file.
 
 ## Part B: Handling the Query
@@ -70,7 +70,7 @@ To run the Workflow:
 
 To send a Query from the CLI, try the following:
 
-```
+```bash
 temporal workflow query \
 --workflow-id="pizza-workflow-order-Z1238" \
 --type="orderDetailsQuery" \

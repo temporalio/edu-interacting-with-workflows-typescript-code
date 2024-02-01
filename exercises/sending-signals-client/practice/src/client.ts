@@ -1,5 +1,6 @@
 import { Connection, Client } from '@temporalio/client';
-import { pizzaWorkflow, fulfillOrderWorkflow } from './workflows/all-workflows';
+//TODO Part A: Import `fulfillOrderSignal`.
+import { pizzaWorkflow } from './workflow';
 import { Address, Customer, Pizza, PizzaOrder, TASK_QUEUE_NAME } from './shared';
 
 async function run() {
@@ -11,18 +12,25 @@ async function run() {
 
   const order = createPizzaOrder();
 
-  const pizzaWorkflowHandle = await client.workflow.start(pizzaWorkflow, {
+  const pizzaWorkflowExecution = await client.workflow.start(pizzaWorkflow, {
     args: [order],
     taskQueue: TASK_QUEUE_NAME,
     workflowId: `pizza-workflow-order-${order.orderNumber}`,
   });
 
-  // TODO Part E: Start the `fulfillOrderWorkflow` and set it to a variable known as `fulfillOrderHandle`.
-  // Set the args and task queue to be the same ones that `pizzaWorkflowHandle` takes in
-  // Set the Workflow ID to be `signal-fulfilled-order-${order.orderNumber}`.
+  // TODO Part B: Create a handle on the pizzaWorkflowExecution 
+  // using `await client.Workflow.getHandle` and its Workflow ID.
+  // Set the handle to a variable called signalHandler.
+  const signalHandler = '';
+
+  // TODO Part C: Using the `signal` method and signalHandler, 
+  // send the `pizzaWorkflow` the `fulfillOrderSignal` with the appropriate boolean 
+  // to indicate that the order was successfully completed or not.
+  // An example of this is below:
+  // await exampleHandler.signal(exampleSignal, 'input');
 
   // optional: wait for client result
-  console.log(await pizzaWorkflowHandle.result());
+  console.log(await pizzaWorkflowExecution.result());
 }
 
 run().catch((err) => {

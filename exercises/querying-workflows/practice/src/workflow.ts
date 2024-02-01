@@ -10,7 +10,8 @@ const { sendBill, getDistance } = proxyActivities<typeof activities>({
   },
 });
 
-// TODO Part A: Use defineQuery to define a Query which we will call orderDetailsQuery.
+// TODO Part A: Use defineQuery to define a Query 
+// which we will call orderDetailsQuery.
 // Fill in the Query type, which should be 'orderDetailsQuery'.
 export const orderDetailsQuery = defineQuery<PizzaOrder[keyof PizzaOrder], [keyof PizzaOrder]>('');
 
@@ -19,9 +20,12 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
 
   setHandler(orderDetailsQuery, (key: keyof PizzaOrder): PizzaOrder[keyof PizzaOrder] => {
     return 'placeholder';
-    // TODO Part B: Remove the line above and return the value of the key on the `order` object.
-    // For example, if someone inputs 'orderNumber' into the orderDetails query, this query should return the value of the orderNumber which is found on the order object.
-    // Don't forget to JSON.stringify the returned response, because some of the values on the order object are JSON.
+    // TODO Part B: Remove the return line above and 
+    // return the value of the key on the `order` object.
+    // For example, if someone inputs 'orderNumber' into the orderDetails query,
+    // this query should return the value of the orderNumber which is found on the order object.
+    // Don't forget to JSON.stringify the returned response, 
+    // because some of the values on the order object are JSON.
   });
 
   if (order.isDelivery) {

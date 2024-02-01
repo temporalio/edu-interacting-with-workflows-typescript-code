@@ -1,9 +1,9 @@
-## Exercise #2: Sending a Signal from Another Workflow
+## Exercise #2: Sending an External Signal
 
 During this exercise, you will:
-
 - Define and handle a Signal
-- Send an External Signal to indicate to the Workflow which execution path to take
+- Retrieve a handle on the Workflow to Signal
+- Send an external Signal
 - Call both Workflows from the Client file
 
 Make your changes to the code in the `practice` subdirectory (look for
@@ -15,7 +15,7 @@ the complete version in the `solution` subdirectory.
 
 You'll need two terminal windows for this exercise.
 
-1. In all terminals, change to the `exercises/sending-signals/practice` directory.
+1. In all terminals, change to the `exercises/sending-signals-external/practice` directory.
 2. In one terminal, run `npm install` to install dependencies.
 
 ## Part A: Defining a Signal
@@ -36,7 +36,7 @@ You will now handle the Signal you defined in part A, and let the Workflow know 
 4. Note that after this `setHandler` method, the code uses `await condition` to waait for the `signal` to be received before continuing to the next step - billing the customer or returning an error.
 5. Save the file.
 
-## Part C: Getting a Handle on the Workflow to Signal
+## Part C: Create a Handle on the Pizza Workflow
 
 The `fulfillOrderWorkflow` Workflow is used to fulfill an order (making and delivering Pizzas). If these steps are completed successfully, we want to use `fulfillOrderWorkflow` to signal to `pizzaWorkflow` that the order was complete and the customer can now be billed. Note that both `fulfillOrderWorkflow` and `pizzaWorkflow` take in the same input parameter: the order details.
 
@@ -44,7 +44,7 @@ In this part of the exercise, you will create a handle on the Workflow that you 
 
 1. Edit the `fulfillOrderWorkflow.ts` file and use the `getExternalWorkflowHandle` method to retrieve a handle of `pizzaWorkflow` using its Workflow ID.
 2. Find the Workflow ID of `pizzaWorkflow` in the `client.ts` file.
-3. Fill out line 18 and set the `pizzaWorkflowHandle` variable to the handle of `pizzaWorkflow`.
+3. Fill out line 19 and set the `pizzaWorkflowHandle` variable to the handle of `pizzaWorkflow`.
 4. Save the file.
 
 ## Part D: Signaling Your Workflow
@@ -74,14 +74,14 @@ To run the Workflow:
 2. In another terminal, start the Workflow by running `npm run workflow` which will run both `fulfillOrderSignal` and `pizzaWorkflow`.
 3. You should see the following output in your CLI:
 
-`{
+```typescript
+{
   orderNumber: 'Z1238',
   confirmationNumber: 'AB9923',
   status: 'SUCCESS',
   billingTimestamp: 1706112388200,
   amount: 2700
-}`.
+}
+```
 
 ### This is the end of the exercise.
-
-If you'd like to see an optional exercise of sending a Signal from just the Client - not a Workflow - navigate to `exercises/sending-signals/client`.
