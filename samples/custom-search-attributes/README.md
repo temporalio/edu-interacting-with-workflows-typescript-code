@@ -13,7 +13,7 @@ You'll need two terminal windows for this exercise.
 
 1. First, you will set your custom Search Attribute, `isOrderFailed`, to a boolean. You can do this in one of your terminals with the following command: `temporal operator search-attribute create --namespace default --name isOrderFailed --type bool`.
 2. Make sure you can see all the Search Attributes you have with the command: `temporal operator search-attribute list`. You should now see `isOrderFailed` in this list.
-3. In the `client.ts` file, we then set our custom Search Attribute by adding it to the options when starting a Workflow execution using (`WorkflowOptions.searchAttributes`)[https://typescript.temporal.io/api/interfaces/client.WorkflowOptions#searchattributes]. This is optional in this case, and this is more for setting Static Attributes that are known at the start of the Workflow. However, we have done so in this file for demonstration purposes.
+3. In the `client.ts` file, we then set our custom Search Attribute by adding it to the options when starting a Workflow execution using [`WorkflowOptions.searchAttributes`](https://typescript.temporal.io/api/interfaces/client.WorkflowOptions#searchattributes). This is optional in this case, and this is more for setting Static Attributes that are known at the start of the Workflow. However, we have done so in this file for demonstration purposes.
 
 ## Part B: Upserting Attributes
 
