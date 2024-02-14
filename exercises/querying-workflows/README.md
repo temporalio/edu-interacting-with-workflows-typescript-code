@@ -78,6 +78,6 @@ temporal workflow query \
 ```
 
 You should see this output in your CLI: `Query result:
-["\"Z1238\""]`
+["\"Z1238\""]`.
 
 ### This is the end of the exercise.

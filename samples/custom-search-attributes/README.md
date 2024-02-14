@@ -49,8 +49,8 @@ To run the Workflows:
 1. In one terminal, start the Worker by running `npm start`.
 2. In another terminal, start the Workflow by running `npm run workflow`.
 
-In your console,you should see the Workflows that succeeded.
+In your console, you should see the Workflows that succeeded.
 
-You can also send a query with your CLI: `temporal workflow list -q 'isOrderFailed=false'`
+You can also send a query with your CLI: `temporal workflow list -q 'isOrderFailed=false'`.
 
 ### This is the end of the sample.
