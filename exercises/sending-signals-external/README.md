@@ -31,10 +31,10 @@ In this part of the exercise, you will define your Signal.
 
 You will now handle the Signal you defined in part A, and let the Workflow know what to do when it encounters the `fulfillOrderSignal`.
 
-1. Note that in `pizzaWorkflow.ts`, we have a `signalProcessed` flag set to false. This indicates that `pizzaWorkflow` has not received a Signal just yet.
+1. In `pizzaWorkflow.ts`, locate the `signalProcessed` flag, which is set to false. This indicates that `pizzaWorkflow` has not received a Signal just yet.
 2. Now, edit the `pizzaWorkflow.ts` file to handle your Signal. We can see in the `setHandler` method that the `fulfillOrderSignal` is already partially handled. When a Workflow receives the `fulfillOrderSignal`, it will change the `isFulfilled` key in the `order` object to the boolean that it receives, indicating if the order was fulfilled or not.
 3. Fill in the second part of this handler function by flipping the `signalProcessed` flag to indicate that the Signal has now been processed.
-4. Note that after this `setHandler` method, the code uses `await condition` to waait for the `signal` to be received before continuing to the next step - billing the customer or returning an error.
+4. After this `setHandler` method, locate the `await condition` which is used to wait for the `signal` to be received before continuing to the next step - billing the customer or returning an error.
 5. Save the file.
 
 ## Part C: Create a Handle on the Pizza Workflow
@@ -55,7 +55,7 @@ Now that you have a handle on the Workflow you wish to Signal (`pizzaWorkflow`),
 After you have created a handle, you can see there is some logic to make and deliver the pizzas. Once that is done successfully, we will now send our Signal.
 
 1. Edit the `fulfillOrderWorkflow.ts` file and using `pizzaWorkflowHandle`, send the `fulfillOrderSignal`, using the appropriate boolean to indicate that the order was successfully completed.
-2. In the `catch` part of this function, which indicates that there was something wrong with making or delivering the Pizzas, send the `fulfillOrderSignal`, using the appropriate boolean to indicate that the order has failed.
+2. In the `catch` part of this function, which indicates that there was something wrong with making or delivering the pizzas, send the `fulfillOrderSignal`, using the appropriate boolean to indicate that the order has failed.
 3. Save the file.
 
 ## Part E: Start the Workflow that Signals

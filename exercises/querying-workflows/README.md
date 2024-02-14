@@ -3,7 +3,7 @@
 During this exercise, you will:
 
 - Define and handle a Query
-- Get a handle on the Workflow the developer would like to query
+- Create a handle to the Workflow the developer would like to query
 - Call the Query from the Client
 - Send a Query from the Command line
 
@@ -33,12 +33,12 @@ You will now handle the Query you defined in part A, and let the Workflow know w
 
 1. Edit the `workflow.ts` file to handle your Query. 
 2. In the `setHandler` method, we already have `orderDetailsQuery` passed in. This query will take in a key from the `PizzaOrder` object.
-3. When a Workflow receives the `orderDetailsQuery` along with the key it wants a value of (e.g., address), it should return the value of the input key. The details of the shape of the `order` object are in `shared.ts`.
+3. When a Workflow receives the `orderDetailsQuery` along with the key it wants a value of (e.g., address), it should return the value of the input key. Locate the details of the shape of the `order` object are in `shared.ts`.
 4. Remove the placeholder return statement and fill in the rest of the function to return the value of the `orderNumber` key from the `PizzaOrder` object. 
 5. Don't forget to `JSON.stringify()` the response, because some of the values on the `order` object are JSON.
 6. Save the file.
 
-## Part C: Create a handle on the Workflow to Query
+## Part C: Create a Handle on the Workflow to Query
 
 We want to call the `orderDetailsQuery` from the Client. After importing the Query, we need to create a handle.
 
@@ -53,7 +53,7 @@ We want to call the `orderDetailsQuery` from the Client. After importing the Que
 Now, we will call the `orderDetailsQuery` from the Client.
 
 1. In `client.ts`, call the `orderDetailsQuery` with the `query` method. 
-2. Set the `query` call to a variable called `queryResult`. 
+2. Assign the result of the Query call to a variable named `queryResult`.
 3. In the `query` method, pass in a key from the `PizzaOrder` that you want to get the information of (e.g., `orderNumber`, `customer`, `items` etc.) The PizzaOrder object details are in `shared.ts`.
 4. Put a `console.log()` statement for `queryResult` so that when you run the Workflow, you can see the results of calling `orderDetailsQuery`.
 5. Save the file.
@@ -64,19 +64,20 @@ To run the Workflow:
 
 1. In one terminal, start the Worker by running `npm start`.
 2. In another terminal, start the Workflow by running `npm run workflow`. You should see the query results in this terminal window.
-3. You should see this output in your CLI: `query result: {"customerID":12983,"name":"María García","email":"maria1985@example.com","phone":"415-555-7418"}`.
+3. Locate this output in your CLI: `query result: {"customerID":12983,"name":"María García","email":"maria1985@example.com","phone":"415-555-7418"}`.
 
-## Optional: Send a Query with the Command Line.
+## Optional: Send a Query with the Command Line
 
 To send a Query from the CLI, try the following:
 
 ```bash
 temporal workflow query \
---workflow-id="pizza-workflow-order-Z1238" \
---type="orderDetailsQuery" \
---input=\"orderNumber\"
+    --workflow-id="pizza-workflow-order-Z1238" \
+    --type="orderDetailsQuery" \
+    --input='"orderNumber"'
 ```
 
-You should see this output in your CLI: `Query result:["\"Z1238\""]`.
+You should see this output in your CLI: `Query result:
+["\"Z1238\""]`
 
 ### This is the end of the exercise.

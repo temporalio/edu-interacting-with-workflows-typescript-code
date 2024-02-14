@@ -34,7 +34,7 @@ You have three functions in the Activities file: `translateTerm`, `startTranslat
 ## Part B: Schedule your Activity to Run Asynchronously
 
 1. Using `setTimeout`, schedule your function `startTranslation` to run asynchronously after a one second delay. 
-2. Your `startTranslation` function should take in the task token you defined in part A, as well as the input that is passed into the `translateTerm` function.
+2. Pass the task token you defined in part A and the input that is passed into the `translateTerm` function into your `startTranslation` function
 
 ## Part C: Throw `CompleteAsyncError`
 
@@ -53,9 +53,8 @@ We will now move to the final function: `completeTranslation`. This is the funct
 
 1. In the `completeTranslation` function, instantiate a new instance of `AsyncCompletionClient` and set it to the `client` variable.
 2. Using `AsyncCompletionClient`, call its `complete` method in order to asynchronously communicate the result of `startTranslation` back to Temporal. 
-3. The complete method should take in the task token along with the results from `startTranslation`. 
-4. The results should be in an object with the string 'translation' as the key and the results of the translation as the value.
-5. Save the `activities.ts` file.
+3. The complete method should take in the task token along with the results from `startTranslation`. The results should be in an object with the string 'translation' as the key and the results of the translation as the value.
+4. Save the `activities.ts` file.
 
 ## Part F: Running the Workflow
 
