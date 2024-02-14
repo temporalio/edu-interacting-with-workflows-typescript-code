@@ -3,7 +3,6 @@
 During this exercise, you will:
 
 - Retrieve a task token from your Activity execution
-- Learn to structure asynchronous Activities
 - Throw a `CompleteAsyncError` to indicate that the Activity is waiting for an external completion.using
 - Use `AsyncCompletionClient` to communicate the result of the asynchronous Activity back to the Workflow
 
