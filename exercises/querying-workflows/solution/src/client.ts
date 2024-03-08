@@ -17,9 +17,7 @@ async function run() {
     workflowId: `pizza-workflow-order-${order.orderNumber}`,
   });
 
-  const queryHandler = await client.workflow.getHandle(`pizza-workflow-order-${order.orderNumber}`);
-
-  const queryResult = await queryHandler.query(orderDetailsQuery, 'customer');
+  const queryResult = await pizzaWorkflowHandle.query(orderDetailsQuery, 'customer');
   console.log(`query result: ${queryResult}`);
 
   // optional: wait for client result

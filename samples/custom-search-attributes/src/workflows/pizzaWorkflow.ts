@@ -26,7 +26,7 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
       throw e;
     }
     if (distance.kilometers > 25) {
-      upsertSearchAttributes({ isOrderFailed: [true] });
+      upsertSearchAttributes({ isOrderFailed: [true], orderStatus: ["FAILED"] });
       throw new ApplicationFailure('Customer lives too far away for delivery');
     }
   }
@@ -51,16 +51,16 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
     };
 
     try {
-      upsertSearchAttributes({ isOrderFailed: [false] });
+      upsertSearchAttributes({ isOrderFailed: [false], orderStatus: ["BILLED"] });
       return await sendBill(bill);
     } catch (e) {
       log.error('Unable to bill customer', {});
-      upsertSearchAttributes({ isOrderFailed: [true] });
+      upsertSearchAttributes({ isOrderFailed: [true], orderStatus: ["FAILED"] });
       throw e;
     }
   } else {
     //If the order is not fulfilled, handle accordingly
-    upsertSearchAttributes({ isOrderFailed: [true] });
+    upsertSearchAttributes({ isOrderFailed: [true], orderStatus: ["FAILED"] });
     log.info('Order was not fulfilled. Not billing customer.');
   }
 }

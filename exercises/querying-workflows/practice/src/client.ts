@@ -18,18 +18,12 @@ async function run() {
     workflowId: `pizza-workflow-order-${order.orderNumber}`,
   });
 
-  // TODO Part C: Using `getHandle`, get a handle to the pizzaWorkflow 
-  // Workflow ID and set it to the queryHandler variable.
-  // An example of how to do this is below:
-  // const exampleHandle = await client.workflow.getHandle('workflow-id-example');
-  const queryHandler = '';
-
-  // TODO Part D: Call the `orderDetailsQuery` with the `query` method 
-  // and set it to a variable called queryResult.
+  // TODO Part C: Call the `orderDetailsQuery` with the `query` method on `pizzaWorkflowHandle`.
+  // Set it to a variable called queryResult.
   // Along with your orderDetailsQuery, pass in a key 
   // from the `PizzaOrder` object that you want to get the information from.
   // An example of how to do this is below:
-  // const queryResult = await signalHandler.query(exampleQuery, "input");
+  // const queryResult = await pizzaWorkflowHandle.query(exampleQuery, "input");
   const queryResult = '';
 
   // TODO Set a console.log statement to the result of queryResult 

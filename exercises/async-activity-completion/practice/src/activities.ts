@@ -1,18 +1,16 @@
 import axios from 'axios';
 import * as activity from '@temporalio/activity';
-import { CompleteAsyncError } from "@temporalio/activity";
+import { CompleteAsyncError, activityInfo, log } from "@temporalio/activity";
 import { AsyncCompletionClient } from "@temporalio/client";
 
 import { TranslationActivityInput, TranslationActivityOutput } from './shared';
 
-export async function translateTerm(input: TranslationActivityInput): Promise<TranslationActivityOutput> {
-  const context = activity.Context.current();
-  // TODO Part A: Extract the task token and replace line 13 with it.
-  // This can be done using the context variable above, which is defined as:
-  // const context = {info: {taskToken: 'abc'}}
-  const taskToken = new Uint8Array(2);
+export async function translateTerm(input: TranslationActivityInput): Promise<TranslationActivityOutput> {;
+  // TODO Part A: Extract the task token and replace line 11 with it.
+  // This can be done taking the `activityInfo` method below and chaining `taskToken` to it
+  const taskToken = activityInfo().taskToken;
 
-  context.log.info('Translating term:', { LanguageCode: input.languageCode, Term: input.term });
+  log.info('Translating term:', { LanguageCode: input.languageCode, Term: input.term });
 
   // TODO PART B: Use setTimeout to asynchronously call `startTranslation` 
   // after a one second delay.
@@ -38,13 +36,13 @@ async function startTranslation(taskToken: Uint8Array, input: TranslationActivit
     // the data received from the translation service
   } catch (error: any) {
     if (error.response) {
-      context.log.error('Translation request failed:', { status: error.response.status, data: error.response.data });
+      log.error('Translation request failed:', { status: error.response.status, data: error.response.data });
       throw new Error(`HTTP Error ${error.response.status}: ${error.response.data}`);
     } else if (error.request) {
-      context.log.error('Translation request failed:', { request: error.request });
+      log.error('Translation request failed:', { request: error.request });
       throw new Error(`Request error:  ${error.request}`);
     }
-    context.log.error('Something else failed during translation', { error });
+    log.error('Something else failed during translation', { error });
     throw new Error('Something else failed during translation.');
   }
 }

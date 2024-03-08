@@ -11,7 +11,6 @@ const { sendBill, getDistance } = proxyActivities<typeof activities>({
 });
 
 export const orderDetailsQuery = defineQuery<PizzaOrder[keyof PizzaOrder], [keyof PizzaOrder]>('orderDetailsQuery');
-
 export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmation | void> {
   let totalPrice = 0;
 

@@ -21,7 +21,7 @@ You'll need two terminal windows for this exercise.
 
 ## Part A: Importing Your Signal
 
-1. Edit the `client.ts` file to import `fulfillOrderSignal` from the `pizzaWorkflow`.
+1. Edit the `client.ts` file to import `fulfillOrderSignal` from the `./workflow` file.
 2. Save the file.
 
 ## Part B: Create a Handle on the Pizza Workflow
@@ -29,8 +29,8 @@ You'll need two terminal windows for this exercise.
 In this part of the exercise, you will create a handle on the Workflow that you wish to Signal, which is `pizzaWorkflow`.
 
 1. Find the Workflow ID of `pizzaWorkflow` in the `client.ts` file.
-2. Edit the `client.ts` file and use the `await client.workflow.getHandle` method to retrieve a handle of `pizzaWorkflow`.
-2. Set the handle to a variable called `signalHandler`.
+2. Edit the `client.ts` file and use the `client.workflow.getHandle` method to retrieve a handle of `pizzaWorkflow`. Also, note that you could have simply used the `pizzaWorkflowExecution` handle to send the Signal and there isn't a need to get a handle first. However, we will get a handle in this case to demonstrate how to do this. You can see how to do this without creating a separate handle in the Query Workflows example.
+2. Set the handle to a variable called `signalHandle`.
 4. Save the file.
 
 ## Part C: Sending a Signal to the Pizza Workflow
@@ -38,10 +38,10 @@ In this part of the exercise, you will create a handle on the Workflow that you 
 Now that you have a handle on the Workflow you wish to Signal (`pizzaWorkflow`), we will now send `pizzaWorkflow` a Signal.
 
 1. Edit the `client.ts` file.
-2. Using the `signal` method and `signalHandler`, send the `pizzaWorkflow` the `fulfillOrderSignal` with the appropriate boolean to indicate that the order was successfully completed or not.
+2. Using the `signal` method and `signalHandle`, send the `pizzaWorkflow` the `fulfillOrderSignal` with the appropriate boolean to indicate that the order was successfully completed or not.
 2. Save the file.
 
-## Part D: Run Both Workflows
+## Part D: Run the Workflow
 
 To run the Workflow:
 

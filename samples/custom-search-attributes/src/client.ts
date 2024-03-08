@@ -16,7 +16,7 @@ async function run() {
     taskQueue: TASK_QUEUE_NAME,
     workflowId: `pizza-workflow-order-${order.orderNumber}`,
     searchAttributes: {
-      isOrderFailed: [false],
+      orderStatus: ['CREATED']
     },
   });
 
@@ -29,9 +29,8 @@ async function run() {
   // optional: wait for client result
   console.log(await pizzaWorkflowHandle.result());
 
-  const failedOrdersQuery = `isOrderFailed = false`;
   const iterator = await client.workflow.list({
-    query: failedOrdersQuery,
+    query: `isOrderFailed = false`,
   });
 
   for await (const workflow of iterator) {

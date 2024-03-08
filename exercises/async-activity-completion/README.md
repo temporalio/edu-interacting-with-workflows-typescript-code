@@ -28,7 +28,7 @@ You have three functions in the Activities file: `translateTerm`, `startTranslat
 ## Part A: Retrieve the task token
 
 1. In the `activities.ts` file, extract the task token, which is unique identifier for the Activity Task Execution.
-2. Replace line 13 with your `taskToken` variable.
+2. Replace line 11 with your `taskToken` variable.
 
 ## Part B: Schedule your Activity to Run Asynchronously
 

@@ -19,11 +19,11 @@ async function run() {
   });
 
   // TODO Part B: Create a handle on the pizzaWorkflowExecution 
-  // using `await client.Workflow.getHandle` and its Workflow ID.
-  // Set the handle to a variable called signalHandler.
-  const signalHandler = '';
+  // using `client.Workflow.getHandle` and its Workflow ID.
+  // Set the handle to a variable called signalHandle.
+  const signalHandle = '';
 
-  // TODO Part C: Using the `signal` method and signalHandler, 
+  // TODO Part C: Using the `signal` method and signalHandle, 
   // send the `pizzaWorkflow` the `fulfillOrderSignal` with the appropriate boolean 
   // to indicate that the order was successfully completed or not.
   // An example of this is below:

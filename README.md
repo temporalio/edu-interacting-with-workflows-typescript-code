@@ -19,7 +19,7 @@ It's important to remember that the example code used in this course was designe
 Samples
 Directory Name | Description
 :----------------------------------| :---------------------------------------------------------------------------------------------------------------------
-`samples/custom-search-attributes` | [Shows a sample of how to use custom Search Attributes to find queries where the order for pizzas has failed](samples/custom-search-attributes)
+`samples/custom-search-attributes` | [Shows a sample of how to use Custom Search Attributes to find queries where the order for pizzas has failed](samples/custom-search-attributes)
 
 ## Reference
 

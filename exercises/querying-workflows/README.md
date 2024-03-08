@@ -3,7 +3,7 @@
 During this exercise, you will:
 
 - Define and handle a Query
-- Create a handle to the Workflow the developer would like to query
+- Create a handle on a Workflow to be queried
 - Call the Query from the Client
 - Send a Query from the Command line
 
@@ -38,33 +38,23 @@ You will now handle the Query you defined in part A, and let the Workflow know w
 5. Don't forget to `JSON.stringify()` the response, because some of the values on the `order` object are JSON.
 6. Save the file.
 
-## Part C: Create a Handle on the Workflow to Query
-
-We want to call the `orderDetailsQuery` from the Client. After importing the Query, we need to create a handle.
-
-1. Edit the `client.ts` file to call the `orderDetailsQuery`. 
-2. Import your Query.
-2. Now you will create a handle on the Workflow that you wish to Query, which is `pizzaWorkflow`. 
-3. You will set the handle to the variable `queryHandler`.
-4. Save the file.
-
-## Part D: Call the Query from the Client
+## Part C: Call the Query on the pizzaWorkflowHandle
 
 Now, we will call the `orderDetailsQuery` from the Client.
 
-1. In `client.ts`, call the `orderDetailsQuery` with the `query` method. 
+1. In `client.ts`, call the `orderDetailsQuery` with the `query` method on the `pizzaWorkflowHandle`. 
 2. Assign the result of the Query call to a variable named `queryResult`.
 3. In the `query` method, pass in a key from the `PizzaOrder` that you want to get the information of (e.g., `orderNumber`, `customer`, `items` etc.) The PizzaOrder object details are in `shared.ts`.
 4. Put a `console.log()` statement for `queryResult` so that when you run the Workflow, you can see the results of calling `orderDetailsQuery`.
 5. Save the file.
 
-## Part E: Run Both Workflows
+## Part D: Run the Workflow
 
 To run the Workflow:
 
 1. In one terminal, start the Worker by running `npm start`.
 2. In another terminal, start the Workflow by running `npm run workflow`. You should see the query results in this terminal window.
-3. Locate this output in your CLI: `query result: {"customerID":12983,"name":"María García","email":"maria1985@example.com","phone":"415-555-7418"}`.
+3. Locate this output in your console: `query result: {"customerID":12983,"name":"María García","email":"maria1985@example.com","phone":"415-555-7418"}`.
 
 ## Optional: Send a Query with the Command Line
 
