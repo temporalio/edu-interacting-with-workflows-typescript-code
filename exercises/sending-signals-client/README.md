@@ -1,4 +1,4 @@
-## Exercise #1: Sending a Signal from the Client
+## Exercise #2: Sending a Signal from the Client
 
 This exercise shows how to send a Signal from just the Client and not from another Workflow.
 

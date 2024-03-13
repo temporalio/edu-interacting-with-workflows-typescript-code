@@ -1,4 +1,4 @@
-## Exercise #2: Sending an External Signal
+## Exercise #1: Sending an External Signal
 
 During this exercise, you will:
 
