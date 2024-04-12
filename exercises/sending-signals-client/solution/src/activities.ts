@@ -2,7 +2,7 @@ import { Address, Bill, Distance, PizzaOrder, OrderConfirmation } from './shared
 import { log } from '@temporalio/activity';
 
 export async function getDistance(address: Address): Promise<Distance> {
-  log.info('getDistance invoked; determining distance to customer address', {});
+  log.info('getDistance invoked; determining distance to customer address');
 
   // this is a simulation, which calculates a fake (but consistent)
   // distance for a customer address based on its length. The value

@@ -26,7 +26,7 @@ export interface PizzaOrder {
   items: Pizza[];
   isDelivery: boolean;
   address: Address;
-  isFulfilled: boolean;
+  orderStatus: string;
 }
 
 export interface Distance {

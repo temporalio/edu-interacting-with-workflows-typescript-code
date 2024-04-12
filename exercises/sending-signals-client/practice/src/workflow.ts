@@ -12,7 +12,7 @@ const { sendBill, getDistance } = proxyActivities<typeof activities>({
 
 export const fulfillOrderSignal = defineSignal<[boolean]>('pizzaOrderFulfilled');
 
-export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmation | string | void> {
+export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmation | string> {
   let totalPrice = 0;
   let signalProcessed = false;
 

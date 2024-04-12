@@ -1,6 +1,5 @@
 import { Address, Bill, Distance, PizzaOrder, OrderConfirmation } from './shared';
 import { log } from '@temporalio/activity';
-import * as activity from '@temporalio/activity';
 
 export async function getDistance(address: Address): Promise<Distance> {
   log.info('getDistance invoked; determining distance to customer address');

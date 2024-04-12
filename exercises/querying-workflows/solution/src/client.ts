@@ -1,5 +1,5 @@
 import { Connection, Client } from '@temporalio/client';
-import { pizzaWorkflow, orderDetailsQuery } from './workflow';
+import { pizzaWorkflow, orderStatusQuery, fulfillOrderSignal } from './workflow';
 import { Address, Customer, Pizza, PizzaOrder, TASK_QUEUE_NAME } from './shared';
 
 async function run() {
@@ -17,11 +17,14 @@ async function run() {
     workflowId: `pizza-workflow-order-${order.orderNumber}`,
   });
 
-  const queryResult = await pizzaWorkflowHandle.query(orderDetailsQuery, 'customer');
-  console.log(`query result: ${queryResult}`);
+  const signalHandle = client.workflow.getHandle(`pizza-workflow-order-${order.orderNumber}`);
+  await signalHandle.signal(fulfillOrderSignal, true);
 
   // optional: wait for client result
   console.log(await pizzaWorkflowHandle.result());
+
+  const queryResult = await pizzaWorkflowHandle.query(orderStatusQuery);
+  console.log(`query result: ${queryResult}`);
 }
 
 run().catch((err) => {
@@ -63,7 +66,7 @@ function createPizzaOrder(): PizzaOrder {
     items,
     address,
     isDelivery: true,
-    isFulfilled: false,
+    orderStatus: 'Created',
   };
 
   return order;

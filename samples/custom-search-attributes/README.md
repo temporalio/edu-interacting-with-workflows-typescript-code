@@ -4,7 +4,7 @@ This example shows how custom Search Attributes can be used in your Workflow. Th
 
 ## Setup
 
-You'll need two terminal windows for this exercise.
+You'll need two terminal windows for this sample.
 
 1. In all terminals, change to the `/samples/custom-search-attributes/src` directory.
 2. In one terminal, run `npm install` to install dependencies.

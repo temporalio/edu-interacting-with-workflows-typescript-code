@@ -1,6 +1,5 @@
 import { Connection, Client } from '@temporalio/client';
-// TODO Part C: Import orderDetailsQuery
-import { pizzaWorkflow } from './workflow';
+import { pizzaWorkflow, orderStatusQuery, fulfillOrderSignal } from './workflow';
 import { Address, Customer, Pizza, PizzaOrder, TASK_QUEUE_NAME } from './shared';
 
 async function run() {
@@ -18,20 +17,23 @@ async function run() {
     workflowId: `pizza-workflow-order-${order.orderNumber}`,
   });
 
-  // TODO Part C: Call the `orderDetailsQuery` with the `query` method on `pizzaWorkflowHandle`.
-  // Set it to a variable called queryResult.
-  // Along with your orderDetailsQuery, pass in a key 
-  // from the `PizzaOrder` object that you want to get the information from.
-  // An example of how to do this is below:
-  // const queryResult = await pizzaWorkflowHandle.query(exampleQuery, "input");
-  const queryResult = '';
-
-  // TODO Set a console.log statement to the result of queryResult 
-  // so that you can see the result of your query.
-  console.log();
+  // TODO Part E: Send the fulfillOrderSignal.
+  // Uncomment lines 22 and 23.
+  // const signalHandle = client.workflow.getHandle(`pizza-workflow-order-${order.orderNumber}`);
+  // await signalHandle.signal(fulfillOrderSignal, true);
 
   // optional: wait for client result
   console.log(await pizzaWorkflowHandle.result());
+
+  // TODO Part C: Call the `orderStatusQuery` with the `query` method on `pizzaWorkflowHandle`.
+  // Set it to a variable called queryResult.
+  // An example of this is below:
+  // const exampleQuery = await exampleHandle.query(myQuery)
+  const queryResult = '';
+
+  // TODO Set a console.log statement to the result of queryResult.
+  // so that you can see the result of your query.
+  console.log();
 }
 
 run().catch((err) => {
@@ -73,7 +75,7 @@ function createPizzaOrder(): PizzaOrder {
     items,
     address,
     isDelivery: true,
-    isFulfilled: false,
+    orderStatus: 'Created',
   };
 
   return order;
