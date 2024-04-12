@@ -7,6 +7,7 @@ export interface TranslationWorkflowInput {
 
 export interface TranslationWorkflowOutput {
   helloMessage: string;
+  goodbyeMessage: string;
 }
 
 export interface TranslationActivityInput {

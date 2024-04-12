@@ -1,5 +1,5 @@
 import { Connection, Client } from '@temporalio/client';
-import { sayHelloWorkflow } from './workflows';
+import { sayHelloGoodbyeWorkflow } from './workflows';
 import { nanoid } from 'nanoid';
 
 import { TASK_QUEUE_NAME } from './shared';
@@ -21,7 +21,7 @@ async function run() {
     languageCode,
   };
 
-  const handle = await client.workflow.start(sayHelloWorkflow, {
+  const handle = await client.workflow.start(sayHelloGoodbyeWorkflow, {
     // type inference works! args: [name: string]
     args: [input],
     taskQueue: TASK_QUEUE_NAME,
