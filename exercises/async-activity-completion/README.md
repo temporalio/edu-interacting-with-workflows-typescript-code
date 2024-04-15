@@ -25,7 +25,7 @@ You have two functions in the Activities file: `translateTerm` and `verifyAndCom
 
 ## Part A: Retrieve the task token
 
-1. In the `activities.ts` file, extract the task token, which is unique identifier for the Activity Task Execution.
+1. In the `activities.ts` file, extract the task token, which is unique identifier for the Activity Task Execution.   This can be done like so: `const token = activityInfo().taskToken`.
 2. Replace line 9 with your `taskToken` variable.
 
 ## Part B: Schedule your Activity to Run Asynchronously
