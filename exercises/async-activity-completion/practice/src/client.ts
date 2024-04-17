@@ -1,6 +1,5 @@
 import { Connection, Client } from '@temporalio/client';
 import { sayHelloWorkflow } from './workflows';
-import { nanoid } from 'nanoid';
 
 import { TASK_QUEUE_NAME } from './shared';
 
@@ -26,7 +25,7 @@ async function run() {
     args: [input],
     taskQueue: TASK_QUEUE_NAME,
     // in practice, use a meaningful business ID, like customerId or transactionId
-    workflowId: 'translation-workflow-' + nanoid(),
+    workflowId: 'translation-workflow-' + input.name,
   });
 
   console.log(`Started workflow ${handle.workflowId}`);
