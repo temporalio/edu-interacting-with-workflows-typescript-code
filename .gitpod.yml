@@ -40,12 +40,6 @@ tasks:
       clear
       echo "Use this terminal to run commands.."
     openMode: split-right
-  - name: Codecserver
-    command: |
-      source /workspace/edu-interacting-with-workflows-typescript-code/.bash.cfg
-      clear
-      echo "Use this terminal to run your codec server.."
-    openMode: split-right
 
 ports:
   - name: Temporal server
@@ -56,10 +50,6 @@ ports:
     description: New (v2) Temporal Web UI
     onOpen: ignore
     visibility: private
-  - name: Codec Server Microservice
-    description: Local Codec Server used in exercises
-    port: 8888
-    onOpen: ignore
 
 vscode:
   extensions:
