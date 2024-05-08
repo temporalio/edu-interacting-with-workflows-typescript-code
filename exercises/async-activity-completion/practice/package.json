@@ -32,6 +32,7 @@
     "nanoid": "3.x"
   },
   "devDependencies": {
+    "@swc/core": "^1.5.5",
     "@tsconfig/node20": "^1.0.2",
     "@types/express": "^4.17.16",
     "@types/node": "^20.x.x",
