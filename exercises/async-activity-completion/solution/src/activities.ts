@@ -27,8 +27,8 @@ async function verifyAndCompleteTranslation(taskToken: Uint8Array, input: Transl
       log.error('Translation request failed:', { status: error.response.status, data: error.response.data });
       throw new Error(`HTTP Error ${error.response.status}: ${error.response.data}`);
     } else if (error.request) {
-      log.error('Translation request failed:', { request: error.request });
-      throw new Error(`Request error:  ${error.request}`);
+      log.error('Translation request failed:', { request: error.request.url });
+      throw new Error(`Request error: ${JSON.stringify(error.request?.url)}`);
     }
     log.error('Something else failed during translation', { error });
     throw new Error('Something else failed during translation.');
