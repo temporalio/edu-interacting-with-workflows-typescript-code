@@ -21,7 +21,7 @@ For the exercises, make sure to run `temporal server start-dev --ui-port 8080 --
 Samples
 Directory Name | Description
 :----------------------------------| :---------------------------------------------------------------------------------------------------------------------
-`samples/custom-search-attributes` | [Shows a sample of how to use Custom Search Attributes to find queries where the order for pizzas has failed](samples/custom-search-attributes)
+`samples/custom-search-attributes/README.md` | [Shows a sample of how to use Custom Search Attributes to find queries where the order for pizzas has failed](samples/custom-search-attributes)
 
 ## Reference
 
