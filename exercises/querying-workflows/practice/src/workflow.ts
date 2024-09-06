@@ -12,8 +12,8 @@ const { sendBill, getDistance } = proxyActivities<typeof activities>({
 
 export const fulfillOrderSignal = defineSignal<[boolean]>('pizzaOrderFulfilled');
 // TODO Part A: Use defineQuery to define a Query
-// which we will call orderDetailsQuery.
-// Fill in the Query type, which should be 'orderDetailsQuery'.
+// which we will call orderStatusQuery.
+// Fill in the Query type, which should be 'orderStatusQuery'.
 export const '' = defineQuery<string>('orderStatusQuery');
 
 export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmation | string> {
