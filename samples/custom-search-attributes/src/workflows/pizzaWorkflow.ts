@@ -51,16 +51,16 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
     };
 
     try {
-      upsertSearchAttributes({ isOrderFailed: [false], orderStatus: ["BILLED"] });
+      upsertSearchAttributes({ isOrderFailed: [false] });
       return await sendBill(bill);
     } catch (e) {
       log.error('Unable to bill customer', {});
-      upsertSearchAttributes({ isOrderFailed: [true], orderStatus: ["FAILED"] });
+      upsertSearchAttributes({ isOrderFailed: [true] });
       throw e;
     }
   } else {
     //If the order is not fulfilled, handle accordingly
-    upsertSearchAttributes({ isOrderFailed: [true], orderStatus: ["FAILED"] });
+    upsertSearchAttributes({ isOrderFailed: [true] });
     log.info('Order was not fulfilled. Not billing customer.');
   }
 }

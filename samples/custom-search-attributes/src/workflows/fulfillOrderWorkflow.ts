@@ -15,17 +15,13 @@ export async function fulfillOrderWorkflow(order: PizzaOrder) {
   try {
     // Logic to fulfill the order
     await makePizzas(order);
-    upsertSearchAttributes({ orderStatus: ["PREPARED"] });
     await deliverPizzas(order);
-    upsertSearchAttributes({ orderStatus: ["DELIVERED"] });
     // Signal the pizzaWorkflow that the order is fulfilled successfully
     await pizzaWorkflowHandle.signal(fulfillOrderSignal, true);
-    upsertSearchAttributes({ orderStatus: ["FULFILLED"] });
     return 'order fulfilled';
   } catch (error) {
     // Signal the pizzaWorkflow that the order fulfillment failed
     await pizzaWorkflowHandle.signal(fulfillOrderSignal, false);
-    upsertSearchAttributes({ orderStatus: ["FAILED"] });
     return 'order not fulfilled';
   }
 }

@@ -15,9 +15,6 @@ async function run() {
     args: [order],
     taskQueue: TASK_QUEUE_NAME,
     workflowId: `pizza-workflow-order-${order.orderNumber}`,
-    searchAttributes: {
-      orderStatus: ['CREATED']
-    },
   });
 
   const fulfillOrderHandle = await client.workflow.start(fulfillOrderWorkflow, {
