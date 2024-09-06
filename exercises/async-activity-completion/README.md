@@ -42,9 +42,8 @@ Throw a new `CompleteAsyncError` to make the Worker forget about the `translateT
 We will now move to the next Activity: `verifyAndCompleteTranslation`. This is the Activity that will communicate the results back to Temporal.
 
 1. In the `verifyAndCompleteTranslation` function, instantiate a new instance of `AsyncCompletionClient` and set it to the `client` variable.
-2. Using `AsyncCompletionClient`, call its `complete` method in order to asynchronously communicate the result of `verifyAndCompleteTranslation` back to Temporal.
-3. The complete method should take in the task token along with the value of the `translation` variable.
-4. Save the `activities.ts` file.
+2. Using `AsyncCompletionClient`, call its `complete` method with `await` in order to asynchronously communicate the result of `verifyAndCompleteTranslation` back to Temporal. It should take in the task token as well as the `translation` variable.
+3. Save the `activities.ts` file.
 
 ## Part F: Running the Workflow
 

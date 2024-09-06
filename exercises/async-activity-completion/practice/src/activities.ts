@@ -28,10 +28,10 @@ async function verifyAndCompleteTranslation(taskToken: Uint8Array, input: Transl
     const response = await axios.get(url);
     const translation = response.data;
 
-    // TODO Part E: Call a new instance of `AsyncCompletionClient`
+    // TODO Part D: Call a new instance of `AsyncCompletionClient`
     // and set it to the client variable.
     const client = '';
-    // TODO Call the `complete` method on `client`.
+    // TODO Call the `complete` method on `client` with await.
     // It should take in the task token as well as the translation variable.
   } catch (error: any) {
     if (error.response) {
