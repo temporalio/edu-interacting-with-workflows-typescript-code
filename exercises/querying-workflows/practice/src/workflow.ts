@@ -14,7 +14,7 @@ export const fulfillOrderSignal = defineSignal<[boolean]>('pizzaOrderFulfilled')
 // TODO Part A: Use defineQuery to define a Query
 // which we will call orderDetailsQuery.
 // Fill in the Query type, which should be 'orderDetailsQuery'.
-export const orderStatusQuery = defineQuery<string>('orderStatusQuery');
+export const '' = defineQuery<string>('orderStatusQuery');
 
 export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmation | string> {
   let totalPrice = 0;
