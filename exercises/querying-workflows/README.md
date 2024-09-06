@@ -77,7 +77,7 @@ To send a Query from the CLI, try the following:
 ```bash
 temporal workflow query \
     --workflow-id="pizza-workflow-order-Z1238" \
-    --type="orderStatusQuery" \
+    --type="orderStatusQuery"
 ```
 
 You should see this output in your CLI: `Query result:
