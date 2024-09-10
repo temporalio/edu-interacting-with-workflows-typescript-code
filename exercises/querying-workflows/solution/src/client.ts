@@ -17,8 +17,7 @@ async function run() {
     workflowId: `pizza-workflow-order-${order.orderNumber}`,
   });
 
-  const signalHandle = client.workflow.getHandle(`pizza-workflow-order-${order.orderNumber}`);
-  await signalHandle.signal(fulfillOrderSignal, true);
+  await pizzaWorkflowHandle.signal(fulfillOrderSignal, true);
 
   // optional: wait for client result
   console.log(await pizzaWorkflowHandle.result());

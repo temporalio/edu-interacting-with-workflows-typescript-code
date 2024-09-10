@@ -60,8 +60,7 @@ To run the Workflow:
 
 1. We will now send a Signal to the pizza Workflow, signaling to it that the Pizza order is now complete.
 2. In `workflows.ts`, uncomment lines 54-61, which are lines from the previous exercise which handle the Signal and wait for the Signal to be received before proceeding.
-3. In `client.ts`, set the `signalHandle` variable to the handle of pizza order workflow. You can find the Workflow ID to pass in from line 17.
-4. Using `signalHandle` that you just created, send it the `fulfillOrderSignal` variable that you created with another argument of `true` to show that the fullfillment was successful. Use the `await signal` method.
+3. In `client.ts`, send the `pizzaWorkflowHandle` the `fulfillOrderSignal` Signal that you created with an argument of `true` to show that the fullfillment was successful. Use the `await signal` method.
 
 ## Part F: Rerun the Workflow
 
