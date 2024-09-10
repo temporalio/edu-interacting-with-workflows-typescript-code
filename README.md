@@ -14,7 +14,7 @@ For the exercises, make sure to run `temporal server start-dev --ui-port 8080 --
 | Directory Name                        | Exercise                                                    |
 | :------------------------------------ | :---------------------------------------------------------- |
 | `exercises/sending-signals-external`  | [Exercise 1](exercises/sending-signals-external/README.md)  |
-| `exercises/sending-signals-client`    | [Exercise 2](exercises/sending-signals-client/README.md)    |
+| `exercises/sending-signals-client-optional`    | [Exercise 2](exercises/sending-signals-client/README.md)    |
 | `exercises/querying-workflows`        | [Exercise 3](exercises/querying-workflows/README.md)        |
 | `exercises/async-activity-completion` | [Exercise 4](exercises/async-activity-completion/README.md) |
 

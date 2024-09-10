@@ -17,10 +17,14 @@ async function run() {
     workflowId: `pizza-workflow-order-${order.orderNumber}`,
   });
 
-  // TODO Part E: Send the fulfillOrderSignal.
-  // Uncomment lines 22 and 23.
-  // const signalHandle = client.workflow.getHandle(`pizza-workflow-order-${order.orderNumber}`);
-  // await signalHandle.signal(fulfillOrderSignal, true);
+  // TODO Part E: 
+  // Set the signalHandle variable to the handle of the pizza order workflow.
+  // You can find the Workflow ID to pass in from line 17.
+  // An example of this is below:
+  // const signalHandle = client.workflow.getHandle('workflow-id');
+  const signalHandle = '';
+
+  // TODO Part E: Send the `signalHandle` the `fulfillOrderSignal` with `true`.
 
   // optional: wait for client result
   console.log(await pizzaWorkflowHandle.result());
