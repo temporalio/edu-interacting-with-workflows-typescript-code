@@ -84,4 +84,4 @@ To run the Workflow:
 }
 ```
 
-### This is the end of the exercise.
+### This is the end of the exercise. If you have extra time, check out `sending-signals-client-optional` to just send a Signal from the Client.
