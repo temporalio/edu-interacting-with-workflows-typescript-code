@@ -36,10 +36,10 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
 
   setHandler(fulfillOrderSignal, (isOrderFulfilled) => {
     order.isFulfilled = isOrderFulfilled;
-    signalProcessed = true;
+    signalProcessed = isOrderFulfilled;
   });
 
-  await condition(() => signalProcessed);
+  await condition(() => signalProcessed, 3000);
 
   if (order.isFulfilled) {
     const bill = {

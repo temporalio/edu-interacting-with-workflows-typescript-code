@@ -33,7 +33,7 @@ You will now handle the Signal you defined in part A, and let the Workflow know 
 
 1. In `pizzaWorkflow.ts`, locate the `signalProcessed` flag, which is set to false. This indicates that `pizzaWorkflow` has not received a Signal just yet.
 2. Now, edit the `pizzaWorkflow.ts` file to handle your Signal. We can see in the `setHandler` method that the `fulfillOrderSignal` is already partially handled. When a Workflow receives the `fulfillOrderSignal`, it will change the `isFulfilled` key in the `order` object to the boolean that it receives, indicating if the order was fulfilled or not.
-3. Fill in the second part of this handler function by flipping the `signalProcessed` flag to indicate that the Signal has now been processed.
+3. Fill in the second part of this handler function by flipping the `signalProcessed` flag to the value of `fulfillOrderSignal` to indicate if the Signal has been processed or not. If the value of `fulfillOrderSignal` is set to `true`, then it means that the fulfill order Signal was received and we can bill the customer. If it is set to false, then the `condition` statement will time out, and we know not to bill the customer.
 4. After this `setHandler` method, locate the `await condition` which is used to wait for the `signal` to be received before continuing to the next step - billing the customer or returning an error.
 5. Save the file.
 
@@ -43,10 +43,9 @@ The `fulfillOrderWorkflow` Workflow is used to fulfill an order (making and deli
 
 In this part of the exercise, you will create a handle on the Workflow that you wish to Signal, which is `pizzaWorkflow`.
 
-1. Edit the `fulfillOrderWorkflow.ts` file and use the `getExternalWorkflowHandle` method to retrieve a handle of `pizzaWorkflow` using its Workflow ID.
-2. Find the Workflow ID of `pizzaWorkflow` in the `client.ts` file.
-3. Fill out line 19 and set the `pizzaWorkflowHandle` variable to the handle of `pizzaWorkflow`.
-4. Save the file.
+1. Find the Workflow ID of `pizzaWorkflow` in the `client.ts` file.
+2. Edit the `fulfillOrderWorkflow.ts` file and set the `pizzaWorkflowHandle` variable to the `getExternalWorkflowHandle` method retrieving a handle of `pizzaWorkflow` using its Workflow ID on line 19.
+3. Save the file.
 
 ## Part D: Signaling Your Workflow
 

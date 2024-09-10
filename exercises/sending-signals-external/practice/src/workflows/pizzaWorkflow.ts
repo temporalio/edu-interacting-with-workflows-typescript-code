@@ -41,11 +41,11 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
     order.isFulfilled = isOrderFulfilled;
     // TODO Part B: Use setHandler to let the Workflow know what happens 
     // if it receives fulfillOrderSignal.
-    // Flip the signalProcessed flag in this handler 
-    // to let the Workflow know that the Signal has been processed
+    // Flip the signalProcessed flag in this handler to set to the val of isOrderFulfilled
+    // to let the Workflow know if the Signal has been processed
   });
 
-  await condition(() => signalProcessed);
+  await condition(() => signalProcessed, 3000);
 
   if (order.isFulfilled) {
     const bill = {
