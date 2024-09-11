@@ -49,9 +49,9 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
       amount: totalPrice,
       description: 'Pizza',
     };
+    upsertSearchAttributes({ isOrderFailed: [true] });
 
     try {
-      upsertSearchAttributes({ isOrderFailed: [false] });
       return await sendBill(bill);
     } catch (e) {
       log.error('Unable to bill customer', {});
