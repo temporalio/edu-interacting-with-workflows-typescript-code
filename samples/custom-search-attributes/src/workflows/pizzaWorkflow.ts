@@ -26,7 +26,7 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
       throw e;
     }
     if (distance.kilometers > 25) {
-      upsertSearchAttributes({ isOrderFailed: [true], orderStatus: ["FAILED"] });
+      upsertSearchAttributes({ isOrderFailed: [true] });
       throw new ApplicationFailure('Customer lives too far away for delivery');
     }
   }
