@@ -49,7 +49,7 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
       amount: totalPrice,
       description: 'Pizza',
     };
-    upsertSearchAttributes({ isOrderFailed: [true] });
+    upsertSearchAttributes({ isOrderFailed: [false] });
 
     try {
       return await sendBill(bill);
