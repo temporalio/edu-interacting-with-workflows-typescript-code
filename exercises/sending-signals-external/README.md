@@ -33,7 +33,7 @@ You will now handle the Signal you defined in part A, and let the Workflow know 
 
 1. In `pizzaWorkflow.ts`, locate the `signalProcessed` flag, which is set to false. This indicates that `pizzaWorkflow` has not received a Signal just yet.
 2. Now, edit the `pizzaWorkflow.ts` file to handle your Signal. We can see in the `setHandler` method that the `fulfillOrderSignal` is already partially handled. When a Workflow receives the `fulfillOrderSignal`, it will change the `isFulfilled` key in the `order` object to the boolean that it receives, indicating if the order was fulfilled or not.
-3. Fill in the second part of this handler function by flipping the `signalProcessed` flag to the value of `fulfillOrderSignal` to indicate if the Signal has been processed or not. If the value of `fulfillOrderSignal` is set to `true`, then it means that the fulfill order Signal was received and we can bill the customer. If it is set to false, then the `condition` statement will time out, and we know not to bill the customer.
+3. Fill in the second part of this handler function by flipping the `signalProcessed` flag to the value of `isOrderFulfilled` to indicate if the Signal has been processed or not. If the value of `isOrderFulfilled` is set to `true`, then it means that the fulfill order Signal was received and we can bill the customer. If it is set to false, then the `condition` statement will time out, and we know not to bill the customer.
 4. After this `setHandler` method, locate the `await condition` which is used to wait for the `signal` to be received before continuing to the next step - billing the customer or returning an error.
 5. Save the file.
 
@@ -61,7 +61,7 @@ After you have created a handle, you can see there is some logic to make and del
 
 We want to start both Workflows - `pizzaWorkflow` and `fulfillOrderSignal`.
 
-1. Edit the `client.ts` file to start the `fulfillOrderSignal` Workflow using `client.workflow.start`.
+1. Edit the `client.ts` file to start the `fulfillOrderWorkflow` Workflow using `client.workflow.start`.
 2. Use the same argument and task queue as `pizzaWorkflowHandle`.
 3. Set the Workflow ID to be `signal-fulfilled-order-${order.orderNumber}` or any other meaningful ID.
 4. Save the file.

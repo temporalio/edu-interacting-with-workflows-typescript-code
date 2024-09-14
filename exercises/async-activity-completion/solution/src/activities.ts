@@ -12,6 +12,20 @@ export async function translateTerm(input: TranslationActivityInput): Promise<Tr
   throw new CompleteAsyncError();
 }
 
+// Calling the URL in the `verifyAndCompleteTranslation` Activity
+// will return a JSON-encoded map, with a single key:
+// translation (containing the translated term). It currently
+// supports the following languages
+//
+//    de: German
+//    es: Spanish
+//    fr: French
+//    lv: Latvian
+//    mi: Maori
+//    sk: Slovak
+//    tr: Turkish
+//    zu: Zulu
+
 async function verifyAndCompleteTranslation(taskToken: Uint8Array, input: TranslationActivityInput): Promise<void> {
   const lang = encodeURIComponent(input.languageCode);
   const term = encodeURIComponent(input.term);

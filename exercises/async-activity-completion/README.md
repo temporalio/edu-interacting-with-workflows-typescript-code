@@ -35,7 +35,7 @@ You have two functions in the Activities file: `translateTerm` and `verifyAndCom
 
 ## Part C: Throw `CompleteAsyncError`
 
-Throw a new `CompleteAsyncError` to make the Worker forget about the `translateTerm` Activity and to signify that `translateTerm` is waiting for an external completion.
+Throw a new `CompleteAsyncError` to make the Worker forget about the `translateTerm` Activity and to signify that `translateTerm` is waiting for an external completion. In the `translateTerm` Activity, replace the thrown error with `CompleteAsyncError`.
 
 ## Part D: Use `AsyncCompletionClient` to Communicate Result Back to Temporal
 
@@ -53,7 +53,7 @@ In each terminal, ensure you are in the `exercises/async-activity-completion/pra
 
 1. In one terminal, start the translation microservice by running `npm run service`.
 2. In another terminal, start the Worker by running `npm start`.
-3. In another terminal, execute the Workflow by running `npm run workflow Tatiana sk` (replace `Tatiana` with your first name).
+3. In another terminal, execute the Workflow by running `npm run workflow Tatiana sk`. You can replace `Tatiana` with your first name, and you can use any of the language codes listed above the `verifyAndCompleteTranslation` Activity.
 
 After the final step, you should see the translated Hello message, which confirms that Workflow Execution completed successfully.
 
