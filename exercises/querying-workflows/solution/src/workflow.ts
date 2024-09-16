@@ -49,7 +49,7 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
     signalProcessed = isOrderFulfilled;
   });
 
-  await condition(() => signalProcessed);
+  await condition(() => signalProcessed, 5000);
 
   if (order.orderStatus !== 'Canceled') {
     const bill = {
