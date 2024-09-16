@@ -67,6 +67,7 @@ export async function pizzaWorkflow(order: PizzaOrder): Promise<OrderConfirmatio
     }
   } else {
     //If the order is not fulfilled, handle accordingly
+    order.orderStatus == 'Canceled';
     return 'Order was not fulfilled. Not billing customer.';
   }
 }
