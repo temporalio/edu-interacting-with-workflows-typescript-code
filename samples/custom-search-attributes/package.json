@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "@temporalio/activity": "^1.9.3",
-    "@temporalio/client": "^1.9.3",
+    "@temporalio/client": "^1.10.1",
     "@temporalio/common": "^1.9.3",
-    "@temporalio/worker": "^1.9.3",
+    "@temporalio/worker": "^1.10.1",
     "@temporalio/workflow": "^1.9.3",
     "nanoid": "3.x",
     "proto3-json-serializer": "^2.0.0"
